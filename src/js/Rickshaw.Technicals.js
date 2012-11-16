@@ -27,7 +27,7 @@ Rickshaw.Technicals.Momentum = Rickshaw.Class.create(Rickshaw.Technicals, {
 	}
 });
 
-// Momentum is the absolute difference m = d(today) - d(n days ago)
+// This is a regression using least squares fitting
 Rickshaw.Technicals.Linreg = Rickshaw.Class.create(Rickshaw.Technicals, {
 	name : "linreg",
 	independent : false,
@@ -39,8 +39,7 @@ Rickshaw.Technicals.Linreg = Rickshaw.Class.create(Rickshaw.Technicals, {
 		var res_arr = [], sum_x = 0, sum_y = 0, sum_xy = 0, sum_xx = 0, count = 0;
 		
 		// We'll use those variables for faster read/write access.
-		var x = 0;
-		var y = 0;
+		var x = 0, y = 0;
 		
 		// Nothing to do.
 		if (datum.length === 0) {
