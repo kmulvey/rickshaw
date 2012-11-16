@@ -147,8 +147,7 @@ function linreg(data_set, period, test, msg){
   var tech = new Rickshaw.Technicals.Linreg();
 	var results = sample_data.results.linreg[data_set];
   var data = tech.calc({
-    datum: sample_data.data[data_set],
-    period: period
+    datum: sample_data.data[data_set]
 	});
 	for(var i in data.linreg){
 	  test.equal(data.linreg[i].y, results[i].y, msg);
