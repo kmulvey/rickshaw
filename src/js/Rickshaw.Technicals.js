@@ -27,6 +27,54 @@ Rickshaw.Technicals.Momentum = Rickshaw.Class.create(Rickshaw.Technicals, {
 	}
 });
 
+// Momentum is the absolute difference m = d(today) - d(n days ago)
+Rickshaw.Technicals.Linreg = Rickshaw.Class.create(Rickshaw.Technicals, {
+	name : "linreg",
+	independent : false,
+	fields : [{
+		curve_sel : true
+	}], 
+	calc : function(args) {
+		var datum = this.datum = args.datum;
+		var res_arr = [], sum_x = 0, sum_y = 0, sum_xy = 0, sum_xx = 0, count = 0;
+		
+		// We'll use those variables for faster read/write access.
+		var x = 0;
+		var y = 0;
+		
+		// Nothing to do.
+		if (datum.length === 0) {
+			return [ [], [] ];
+		}
+		
+		// Calculate the sum for each of the parts necessary.
+		for (var i = 0; i < datum.length; i++) {
+			x = datum[i].x;
+			y = datum[i].y;
+			sum_x += x;
+			sum_y += y;
+			sum_xx += x*x;
+			sum_xy += x*y;
+			count++;
+		}
+		
+		// Calculate m and b for the formula:
+		// y = x * m + b
+		var m = (count*sum_xy - sum_x*sum_y) / (count*sum_xx - sum_x*sum_x);
+		var b = (sum_y/count) - (m*sum_x)/count;
+		
+		for (var v = 0; v < datum.length; v++) {
+			x = datum[v].x;
+			y = x * m + b;
+			res_arr.push({ x: x, y0: datum[v].y0, y: y });
+		}
+		
+		return {
+			'linreg' : res_arr
+		};
+	}
+});
+
 // Simple moving average
 Rickshaw.Technicals.SMA = Rickshaw.Class.create(Rickshaw.Technicals, {
 	independent : false,
