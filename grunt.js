@@ -161,7 +161,7 @@ module.exports = function(grunt) {
     // Make it
 		grunt.registerTask('make', 'clean recess concat min');
  		// test only
-		grunt.registerTask('testonly', 'recess lint qunit test');
+		grunt.registerTask('testonly', 'clean concat min recess qunit test');
  		// JS
     grunt.registerTask('js', 'lint qunit test concat min');
     // CSS
