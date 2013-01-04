@@ -1,5 +1,4 @@
-var Rickshaw = require('../rickshaw'), assert = require('assert');
-//var Rickshaw = require('../dist/js/rickshaw-1.1.2.min.js'), assert = require('assert');
+var Rickshaw = require('../dist/js/rickshaw'), assert = require('assert');
 
 ////////////   UTILS
 var sample_data = {

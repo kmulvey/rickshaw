@@ -6,7 +6,7 @@ exports.svg = function(test) {
 	global.document = jsdom("<html><head></head><body></body></html>");
 	global.window   = global.document.createWindow();
 
-	var Rickshaw = require('../rickshaw');
+	var Rickshaw = require('../dist/js/rickshaw');
 	new Rickshaw.Compat.ClassList();
 
 	var el = document.createElement("div");
@@ -46,7 +46,7 @@ exports.inconsistent = function(test) {
 	global.document = jsdom("<html><head></head><body></body></html>");
 	global.window   = global.document.createWindow();
 
-	var Rickshaw = require('../rickshaw');
+	var Rickshaw = require('../dist/js/rickshaw');
 	new Rickshaw.Compat.ClassList();
 
 	var el = document.createElement("div");
