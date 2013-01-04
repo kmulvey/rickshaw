@@ -1,5 +1,7 @@
 # Rickshaw
 
+[![Build Status](https://travis-ci.org/kmulvey/rickshaw.png)](https://travis-ci.org/kmulvey/rickshaw)
+
 Rickshaw is a JavaScript toolkit for creating interactive time series graphs, developed at [Shutterstock](http://www.shutterstock.com)
 
 ## Getting Started
