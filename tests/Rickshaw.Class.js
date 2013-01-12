@@ -1,4 +1,4 @@
-var Rickshaw = require('../rickshaw');
+var Rickshaw = require('../dist/js/rickshaw');
 
 exports.load = function(test) {
 
