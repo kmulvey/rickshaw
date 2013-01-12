@@ -14,7 +14,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
 
-	<script src="../rickshaw.js"></script>
+	<script src="../dist/js/rickshaw.js"></script>
 	<script src="js/technicals.js"></script>
 </head>
 <body>
@@ -142,6 +142,49 @@
 					ele: document.getElementById("tech_chart")
 				});
 			});
+			
+			
+			// stochastic
+			var tech = new Rickshaw.Technicals.FStochastic();
+			var period = new Array();
+			period['%d'] = 3;
+			period['%k'] = 14;
+			var data = tech.calc({
+				datum: graph.series[0].data,
+				period: period
+			});
+			console.log(JSON.stringify(graph.series[0].data));
+			console.log(JSON.stringify(data['%k']));
+			console.log(JSON.stringify(data['%d']));
+			
+			
+			// sma
+			tech = new Rickshaw.Technicals.SMA();
+			period = new Array();
+			period['p'] = 30;
+			data = tech.calc({
+				datum: graph.series[0].data,
+				period: period
+			});
+			console.log(JSON.stringify(data['sma']));
+			
+			
+			// momentum
+			tech = new Rickshaw.Technicals.Momentum();
+			data = tech.calc({
+				datum: graph.series[0].data,
+				period: period
+			});
+			console.log(JSON.stringify(data['momentum']));
+			
+			
+			// linreg
+			tech = new Rickshaw.Technicals.Linreg();
+			data = tech.calc({
+				datum: graph.series[0].data,
+				period: period
+			});
+			console.log(JSON.stringify(data['linreg']));
 		});
 	</script>
 </body>
