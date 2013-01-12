@@ -47,7 +47,7 @@ module.exports = function(grunt) {
         recess: {
             dist: {
                 src: [
-                    'src/css/*'
+                    'src/css/*.css'
                 ],
                 dest: 'dist/css/<%= pkg.name %>.css',
                 options: {
@@ -157,13 +157,13 @@ module.exports = function(grunt) {
     });
 
     // Default task: the works
-    grunt.registerTask('default', 'clean recess lint qunit test concat min');
-    // Make it
+		grunt.registerTask('default', 'clean recess lint qunit test concat min');
+		// Make it
 		grunt.registerTask('make', 'clean recess concat min');
- 		// test only
+		// test only
 		grunt.registerTask('testonly', 'clean concat min recess qunit test');
- 		// JS
-    grunt.registerTask('js', 'lint qunit test concat min');
-    // CSS
-    grunt.registerTask('css', 'recess');
+		// JS
+		grunt.registerTask('js', 'lint qunit test concat min');
+		// CSS
+		grunt.registerTask('css', 'recess');
 };
