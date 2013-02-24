@@ -91,7 +91,7 @@ Add a callback to run when the graph is rendered
 ## Extensions
 
 Once you have a basic graph, extensions let you add functionality.  See the [overview](http://code.shutterstock.com/rickshaw/) and [examples](http://shutterstock.github.com/rickshaw/examples/) listing for more.
- 
+
 * __Rickshaw.Graph.Legend__ - add a basic legend
 
 * __Rickshaw.Graph.HoverDetail__ - show details on hover
@@ -102,7 +102,11 @@ Once you have a basic graph, extensions let you add functionality.  See the [ove
 
 * __Rickshaw.Graph.RangeSlider__ - dynamically zoom on the x-axis with a slider
 
-* __Rickshaw.Graph.Axis.Time__ - add x-axis time labels
+* __Rickshaw.Graph.Axis.Time__ - add x-axis and grid lines with time labels
+
+* __Rickshaw.Graph.Axis.X__ - add an x-axis and grid lines with arbitrary labels
+
+* __Rickshaw.Graph.Axis.Y__ - add a y-axis and grid lines
 
 * __Rickshaw.Graph.Behavior.Series.Highlight__ - highlight series on legend hover
 
@@ -135,6 +139,27 @@ palette.color() // => next color in the palette...
 #### Interpolation
 
 For graphs with more series than palettes have colors, sepcify an `interpolatedStopsCount` to the palette constructor.
+
+## Rickshaw.Technicals
+
+The Technicals class provides four calculators for trend analysis.
+
+```javascript
+var tech = new Rickshaw.Technicals.FStochastic();
+// calc() returns a new series with the calculated data
+var data = tech.calc({
+	datum: graph.series[datum].data,
+	period: period
+});
+```
+
+#### Calculators
+
+  * Momentum (rate of acceleration)
+  * Linear Regression (least squares fitting)
+  * Simple Moving Average (finite impulse response filter used to analyze a series of averages)
+  * Stochastic oscillator (a momentum indicator that uses a value range over a given period)
+
 
 ## Rickshaw and Cross-Browser Support
 
