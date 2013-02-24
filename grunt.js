@@ -17,7 +17,6 @@ module.exports = function(grunt) {
             ' Licensed MIT */'
         },
 
-
 				clean: {
             js : {
                 dirs: [
