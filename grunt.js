@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 
         pkg: '<json:package.json>',
         meta: {
-    		banner: 
+				banner: 
             '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
             '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
             '* <%= pkg.url %>\n' +
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 				clean: {
             js : {
                 dirs: [
-                    "dist/js/",
+                    "dist/js/"
                 ]
             },
             css : {
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
 
         // ========== CSS ==========
         recess: {
-            dist: {
+            build: {
                 src: [
                     'src/css/*.css'
                 ],
@@ -53,7 +53,12 @@ module.exports = function(grunt) {
                     compile: true,
                     compress: true
                 }
-            }
+            },
+            lint: {
+							src: [
+								'src/css/*.css'
+              ]
+						}
         },
         // ========== END CSS ==========
 
@@ -88,7 +93,7 @@ module.exports = function(grunt) {
 
 
         jshint: {
-        	options: {
+					options: {
                 // Development.
                 "debug"         : false,  // Allow debugger statements e.g. browser breakpoints.
                 "devel"         : true,   // Allow developments statements e.g. `console.log();`.
@@ -155,14 +160,14 @@ module.exports = function(grunt) {
         uglify: {}
     });
 
-    // Default task: the works
-		grunt.registerTask('default', 'clean recess lint qunit test concat min');
+    // Default task: make
+		grunt.registerTask('default', 'make');
 		// Make it
-		grunt.registerTask('make', 'clean recess concat min');
+		grunt.registerTask('make', 'clean recess:build concat min');
 		// test only
-		grunt.registerTask('testonly', 'clean concat min recess qunit test');
+		grunt.registerTask('testonly', 'recess:lint qunit test');
 		// JS
 		grunt.registerTask('js', 'lint qunit test concat min');
 		// CSS
-		grunt.registerTask('css', 'recess');
+		grunt.registerTask('css', 'recess:lint');
 };
