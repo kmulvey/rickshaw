@@ -1,0 +1,55 @@
+{
+  "debug"         : false,  
+  "devel"         : true,  
+
+  "passfail"      : false,
+  "maxerr"        : 100, 
+
+  "browser"       : true,
+  "node"          : true,
+  "rhino"         : false,
+  "couch"         : false,
+  "wsh"           : false,
+  "jquery"        : true,
+  "prototypejs"   : false,
+  "mootools"      : false,
+  "dojo"          : false,
+
+  "asi"           : false,  
+  "laxbreak"      : true,   
+  "bitwise"       : true,   
+  "boss"          : false,  
+  "curly"         : false,  
+  "eqeqeq"        : true,   
+  "eqnull"        : false,  
+  "evil"          : false,  
+  "expr"          : false,  
+  "forin"         : false,  
+  "immed"         : true,   
+  "latedef"       : true,   
+  "loopfunc"      : false,  
+  "noarg"         : true,   
+  "regexp"        : true,   
+  "regexdash"     : false,  
+  "scripturl"     : true,   
+  "shadow"        : false,  
+  "supernew"      : false,  
+  "undef"         : true,   
+  "es5"           : true,   
+  "strict"        : false,  
+  "onecase"       : true,
+
+  "newcap"        : true,   
+  "noempty"       : true,   
+  "nonew"         : true,   
+  "nomen"         : true,   
+  "onevar"        : false,  
+  "plusplus"      : false,  
+  "sub"           : true,  
+  "trailing"      : false,  
+  "white"         : false,  
+
+  "predef"     : [
+      "Rickshaw"
+  ]
+}
