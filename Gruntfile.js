@@ -33,14 +33,6 @@ module.exports = function(grunt) {
         ]
       }
     },
-    // ========== TESTS ==========
-		// nodeunit
-		nodeunit: {
-			files: ['tests/*.js']
-		},
-    // ========== END TESTS ==========
-
-
     // ========== CSS ==========
     recess: {
       build: {
@@ -114,6 +106,9 @@ module.exports = function(grunt) {
 				compress: true
 			}
     },
+		nodeunit: {
+			files: ['tests/*.js']
+		},
     // ========== END JS ==========
 
 
