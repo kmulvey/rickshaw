@@ -11,7 +11,7 @@ Rickshaw.Technicals.Momentum = Rickshaw.Class.create(Rickshaw.Technicals, {
 		curve_sel : true
 	}], 
 	calc : function(args) {
-		var period = this.period = args.period['p'];
+		var period = this.period = args.period.p;
 		var datum = this.datum = args.datum;
 		var res_arr = [];
 		var length = datum.length;
@@ -83,7 +83,7 @@ Rickshaw.Technicals.SMA = Rickshaw.Class.create(Rickshaw.Technicals, {
 		curve_sel : true
 	}], 
 	calc : function(args) {
-		var period = this.period = args.period['p'];
+		var period = this.period = args.period.p;
 		var datum = this.datum = args.datum;
 		var nums = [];
 		var res_arr = [];
@@ -198,13 +198,13 @@ Rickshaw.Technicals.FStochastic = Rickshaw.Class.create(Rickshaw.Technicals, {
 			res_arr.push({ x: curr_obj.x, y0: curr_obj.y0, y: k });
 		}
 		var sma_period = [];
-		sma_period['p'] = period['%d'];
+		sma_period.p = period['%d'];
 		return {
 			'%k' : res_arr,
 			'%d' : new Rickshaw.Technicals.SMA().calc({
 				datum: res_arr, 
 				period: sma_period
-			})['sma']
+			}).sma
 		};
 	}
 });
