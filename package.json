@@ -6,13 +6,14 @@
 		"jsdom" : ">= 0.2.14"
 	},
 	"devDependencies": {
-		"grunt" : "",
+		"grunt" : ">=0.4.0",
 		"grunt-recess" : "",
 		"grunt-contrib-jshint": "",
 		"grunt-contrib-uglify": "",
 		"grunt-contrib-nodeunit" : "",
 		"grunt-contrib-concat" : "",
-		"grunt-contrib-watch": ""
+		"grunt-contrib-watch": "",
+		"grunt-contrib-clean": ""
 	},
 	"keywords": ["d3", "charts", "rickshaw", "svg", "graph"],
 	"main": "./rickshaw",
@@ -20,6 +21,6 @@
 		"node": ">= 0.8.0"
 	},
 	"scripts":{
-		"build" : "grunt make"
+		"test" : "grunt make"
 	}
 }

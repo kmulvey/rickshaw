@@ -2,8 +2,8 @@ module.exports = function(grunt) {
   "use strict";
 
 	// Includes
-  grunt.loadNpmTasks('grunt-cleanx');
   grunt.loadNpmTasks('grunt-recess');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-nodeunit');
 	grunt.loadNpmTasks('grunt-contrib-concat'); 
 	grunt.loadNpmTasks('grunt-contrib-uglify');	
@@ -45,9 +45,7 @@ module.exports = function(grunt) {
         }
       },
       lint: {
-				src: [
-					'src/css/legend.css'
-        ]
+				src: ['src/css/*.css']
 			}
     },
 		// ========== END CSS ==========
